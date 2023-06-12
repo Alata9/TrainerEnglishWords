@@ -88,10 +88,10 @@ def combo_subgroup_selected(value):
 frame_left = ctk.CTkFrame(root)
 frame_left.grid(row=0, column=0, columnspan=2, sticky="nsew", padx=15, pady=(15, 25))
 
-tabview = ctk.CTkTabview(frame_left)                                                    #
-tabview.grid(row=1, column=0, columnspan=2, sticky="nsew", padx=15, pady=(15, 15))       #
-tab_write = tabview.add('Step 1. Write the correct translation')                                #
-tab_choice = tabview.add('Step 2. Choose the correct translation')                                                      #
+tabview = ctk.CTkTabview(frame_left)
+tabview.grid(row=1, column=0, columnspan=2, sticky="nsew", padx=15, pady=(15, 15))
+tab_write = tabview.add('Step 1. Write the correct translation')
+tab_choice = tabview.add('Step 2. Choose the correct translation')
 
 frame_filter_set = ctk.CTkFrame(frame_left)
 frame_filter_set.grid(row=0, column=0, columnspan=2, sticky="nsew", padx=15, pady=(15, 0))
@@ -161,25 +161,21 @@ def get_result_workout_write(event):
 root.bind("<Return>", get_result_workout_write)
 
 
-frame_workout_write = ctk.CTkFrame(tab_write)      #frame_left
-# frame_workout_write.grid(row=1, column=0, padx=(15, 0), pady=15, sticky='nswe')
+frame_workout_write = ctk.CTkFrame(tab_write)
 frame_workout_write.pack(pady=10)
 ctk.CTkLabel(frame_workout_write, text='Write the correct translation:', font=('Areal', 20)).pack(padx=5, pady=(5, 5))
 ctk.CTkLabel(frame_workout_write, text="Work with hotkeys: 'Shift_R'- new word, 'Enter'- check'",
              font=('Areal', 12)).pack(padx=30, pady=20)
 
 frame_board_for_writing = ctk.CTkFrame(frame_workout_write)
-# frame_board_for_writing.grid(row=0, column=0, padx=(20, 20), sticky='nswe')                                     #
-frame_board_for_writing.pack(padx=(20, 20), fill='both', expand=True)                                             #
+frame_board_for_writing.pack(padx=(20, 20), fill='both', expand=True)
 show_rusword_label = ctk.CTkLabel(frame_board_for_writing, width=250, text='',
                                   font=('Areal', 22, 'bold'), text_color='green', justify=tk.CENTER)
 show_rusword_label.grid(row=2, column=1, columnspan=2, padx=(20, 20), pady=(20, 10))
-# show_rusword_label.pack(padx=(20, 20))
 correct_engword_for_check = ctk.CTkEntry(frame_board_for_writing, width=250, justify=tk.CENTER)
 var = StringVar()
 try_engword_entry = ctk.CTkEntry(frame_board_for_writing, width=250, textvariable=var, justify=tk.CENTER)
 try_engword_entry.grid(row=3, column=1, columnspan=2, padx=(20, 20), pady=(10, 20))
-# try_engword_entry.pack(padx=(20, 20), pady=(20, 20))
 show_result_write_label = ctk.CTkLabel(frame_workout_write, text='')
 show_result_write_label.pack(padx=(20, 20), pady=(20, 20))
 
@@ -307,8 +303,7 @@ def show_result_workout_choice():
         show_result_choice_label.configure(text=msg, text_color='red')
 
 
-frame_workout_choice = ctk.CTkFrame(tab_choice) #frame_left
-# frame_workout_choice.grid(row=1, column=1, padx=15, pady=15)
+frame_workout_choice = ctk.CTkFrame(tab_choice)
 frame_workout_choice.pack(pady=10)
 ctk.CTkLabel(frame_workout_choice, text='Choose the workout settings:', font=('Areal', 20)).pack(pady=(10, 0))
 
@@ -469,7 +464,6 @@ appearance_mode_optionemenu = ctk.CTkOptionMenu(frame_appearance_mode, values=["
                                                                            command=change_appearance_mode_event)
 appearance_mode_optionemenu.set('Dark')
 appearance_mode_optionemenu.grid(row=1, column=0, padx=20, pady=(10, 10))
-
 
 
 root.mainloop()
