@@ -11,7 +11,7 @@ import pyttsx3
 
 root = ctk.CTk()
 root.title('Work out of english words 3000')
-root.geometry('880x670+300+100')
+root.geometry('860x670+300+100')
 
 ctk.set_appearance_mode("light")
 ctk.set_default_color_theme("dark-blue")
